@@ -1,4 +1,5 @@
 using APII.Data;
+using APII.Helpers;
 using APII.Interfaces;
 using APII.Services;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,8 @@ services.AddCors();
 services.AddScoped<ITokenService, TokenService>();
 services.AddScoped<IUserRepository, UserRepository>();
 services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
+services.AddScoped<IPhotoService, PhotoService>();
 
 return services;
 
