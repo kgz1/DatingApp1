@@ -1,8 +1,11 @@
+using APII.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APII.Controllers
 
 {
+
+[ServiceFilter(typeof(LogUserActivity))]
 [ApiController]
 [Route("api/[controller]")]
 

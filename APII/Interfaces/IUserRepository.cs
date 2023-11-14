@@ -1,5 +1,6 @@
 using APII.DTOs;
 using APII.Entities;
+using APII.Helpers;
 
 namespace APII.Interfaces
 
@@ -16,7 +17,7 @@ Task<AppUser> GetUserByIdAsync(int id);
 
 Task<AppUser> GetUserByUsernameAsync(string username); 
 
-Task<IEnumerable<MemberDto>> GetMembersAync();
+Task<PagedList<MemberDto>> GetMembersAync(UserParams userParams);
 
 Task <MemberDto> GetMemberAsync(string username);
 
