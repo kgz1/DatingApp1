@@ -2,6 +2,7 @@ using APII.Data;
 using APII.Helpers;
 using APII.Interfaces;
 using APII.Services;
+using APII.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace APII.Extensions
@@ -27,6 +28,8 @@ services.AddScoped<IPhotoService, PhotoService>();
 services.AddScoped<LogUserActivity>();
 services.AddScoped<ILikesRepository,  LikesRepository>();
 services.AddScoped<IMessageRepository, MessageRepository>();
+services.AddSignalR();
+services.AddSingleton<PresenceTracker>();
 return services;
 
 }
